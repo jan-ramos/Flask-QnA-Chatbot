@@ -1,0 +1,92 @@
+<!-- templates/login.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+
+
+
+.typewriter h1{
+  color: #fff;
+  font-size:40px;
+  font-family: monospace;
+  overflow: hidden; 
+  white-space: inherit; 
+  margin: 0 auto; 
+  letter-spacing: .15em;
+  animation: 
+    typing 1s steps(30, end);
+}
+
+.typewriter h2{
+  color: #fff;
+  font-size:20px;
+  font-family: monospace;
+  overflow: hidden; 
+  white-space: inherit; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 1s steps(30, end);
+}
+
+.typewriter p {
+  color: #fff;
+  font-size:15px;
+  font-family: monospace;
+  overflow: hidden; 
+  white-space: wrap;
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 1s steps(30, end);
+   
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+</style>
+<div class="typewriter">
+  <h1>Class Notes and Textbooks QnA</h1>
+  <br>
+  <h2>Chat with your class notes and textbooks using OpenAI gpt-3.5-turbo.</h2>
+  <br>
+  <br>
+  <br>
+  <div class="column is-4 is-offset-4">
+    <h3 class="title has-text-weight-light is-family-code " >Enter OpenAI API key:</h3>
+    <div class="box has-background-white-ter">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="/">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large is-family-code  has-text-weight-light " type="api" name="api" placeholder="Your API Key" autofocus="">
+                </div>
+            </div>
+            
+            <button class="button is-dark is-block is-large is-fullwidth is-outlined">SUBMIT</button>
+        </form>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <br>
+  <br>
+  <br>
+  <p>Notes: This advanced AI, built on the GPT-3.5 architecture, is designed to provide real-time assistance and support 
+    to students by leveraging natural language processing and understanding.</p>
+</div>
+
+{% endblock %}

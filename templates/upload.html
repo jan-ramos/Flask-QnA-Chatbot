@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="static/css/sidebar.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  </head>
+
+  
+  
+  <body>
+    <!--<div class="title">
+    <h1>Test</h1>
+    </div>-->
+    <div class="sidenav">
+      <h1>Welcome to the document loading platform!</h1>
+      <br>
+      <h2>You can only upload .ppt, .txt, .doc, .docx and .pdf files.</h2>
+      <br>
+      <br>
+      <br>
+      <div class="typewriter">
+      <p>  You can easily upload your notes with us by dragging and dropping your file into the designated drop area.
+        Alternatively, you can click the drop area to select files from your device.
+         After you've added your files, hit the 'Upload' button to proceed to train the ChatGPT model on your documents.</p></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <br>
+ 
+        
+      <br>
+    </div>
+
+    <div class="main">
+      <div class="box" id = "box">
+          <form action="/upl" method="POST" enctype="multipart/form-data">
+          <div id="file-main" class="is-centered">
+            <label class="file-label">
+              <input class="file-input" type="file" name="file" id="fileInput" data-multiple-caption="{count} files selected" multiple>
+              <span class="upload-area">
+                <label for="file" id="file-label">
+                  <p>Choose a file</p>
+                  <span class="box__dragndrop"> or drag it here</span>.
+                </label>
+              </span>
+            </label>
+          </div>
+          <br>
+          <button type="submit" class="button is-medium  is-outlined">Upload</button>
+              <!-- <button class="button is-loading">Loading</button> -->
+        </form>
+      </div>
+      <br>
+
+    </div>
+
+    <script>
+      const fileInput = document.querySelector('#file-main input[type=file]');
+      fileInput.onchange = () => {
+        if (fileInput.files.length > 0) {
+          const fileName = document.querySelector('#file-main .file-name');
+          fileName.textContent = fileInput.files[0].name;
+        }
+      }
+  
+      var selDiv = "";
+        
+        document.addEventListener("DOMContentLoaded", init, false);
+        
+        function init() {
+          document.querySelector('#fileInput').addEventListener('change', handleFileSelect, false);
+          selDiv = document.querySelector(".typewriter");
+        }
+          
+        function handleFileSelect(e) {
+          console.dir(e);
+          
+          if(!e.target.files) return;
+          
+          selDiv.innerHTML = "";
+          
+          var files = e.target.files;
+          for(var i=0; i<files.length; i++) {
+            var f = files[i];
+            
+            selDiv.innerHTML += "<p>" + (i+1)+". " + f.name + "</p>" +"<br/>";
+      
+          }
+          
+        }
+  
+        function loadFileAsText(){
+        var fileToLoad = document.getElementById("fileInput").files[0];
+  
+        var fileReader = new FileReader();
+        fileReader.onload = function(fileLoadedEvent){
+            var textFromFileLoaded = fileLoadedEvent.target.result;
+            document.getElementById("inputTextToSave").value = textFromFileLoaded;
+        };
+  
+        fileReader.readAsText(fileToLoad, "UTF-8");
+      }
+    </script>
+  </body>
+</html>

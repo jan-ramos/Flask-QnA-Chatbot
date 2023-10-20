@@ -1,0 +1,146 @@
+.title{
+  background-color:#33343f;
+  width:100%
+}
+
+.sidenav {
+  height: 100%; 
+  width: 600px; 
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  background-color:black;
+  overflow-x: hidden;
+  padding-top: 150px;
+  color:white;
+  border-right:solid;
+  border-color:#494b59;
+  border-width: 1.5px;
+  display:block;
+  text-align:center;
+  font-family:monospace;
+}
+
+.typewriter h1{
+  color: #fff;
+  font-size:30px;
+  font-family: monospace;
+  overflow: hidden; 
+  white-space: inherit; 
+  margin: 0 auto; 
+  letter-spacing: .15em;
+  animation: 
+    typing 1s steps(30, end);
+}
+
+.typewriter h2{
+  color: #fff;
+  font-size:20px;
+  font-family: monospace;
+  overflow: hidden; 
+  white-space: inherit; 
+  margin: 0 auto; 
+  letter-spacing: .15em;
+  animation: 
+    typing 1s steps(30, end);
+}
+
+.typewriter p {
+  color: #fff;
+  font-size:15px;
+  font-family: monospace;
+  overflow: hidden; 
+  white-space: wrap;
+  margin: 0 auto; 
+  letter-spacing: .15em;
+  animation: 
+    typing 1s steps(30, end);
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}*/
+
+.main {
+  margin-left: 570px; 
+  padding: 0px 10px;
+  background-color:black;
+  height:100%;
+  position:fixed;
+  width:100%;
+  display:block;
+  text-align:center;
+}
+
+#box{
+  background:black;
+  margin-top:100px
+}
+
+#file-main{
+  width:900px;
+  height:450px;
+  margin-left:200px;
+  border-width: 1.5px;
+  border-style:solid;
+  border-color:white;
+  color:white;
+  font-size:25px;
+}
+
+
+
+#file-main .upload-area{
+  width:900px;
+  height:450px;
+  border-radius:10px;
+ }
+ 
+ #file-main p{
+  margin-top:180px;
+  font-family: monospace;
+ }
+
+ .box__dragndrop{
+  font-family: monospace;
+ }
+
+#file-main:hover{
+ 
+  border-color:aqua;
+  color:aqua;
+  border-style:dashed;
+}
+
+.button{
+  font-family: monospace;
+  margin-left:-500px;
+  
+}
+
+h1{
+  font-family: monospace;
+}
+
+.sidenav p{
+  font-family:monospace;
+}
+
+.sidenav h1{
+  font-family:monospace;
+  font-size:30px;
+}
+
+.sidenav h2{
+  font-family:monospace;
+  font-size:15px;
+  color:red;
+}
