@@ -1,4 +1,4 @@
-# Flask-QnA-Chatbot
+# Student Notes QnA Chatbot
 ### Document loader QnA chatbot powered by gpt-3.5 turbo
 Easily upload any PDF, Text document, Word document and PowerPoint file you'd like to chat with. You'll be able to ask questions to your textbooks, class notes and much more!
 
